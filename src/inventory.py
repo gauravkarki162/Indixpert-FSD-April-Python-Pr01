@@ -1,5 +1,5 @@
 import json
-from Inventory_Management_System.product import Product
+from src.product import Product
 
 class Inventory:
     def __init__(self):
@@ -8,12 +8,14 @@ class Inventory:
 
     def add_product(self, product_id, name, price, quantity):
         if product_id in self.products:
-            return f"Product ID {product_id} already exists."
+            return f"Product ID {product_id} already exists with the name '{self.products[product_id].name}'."
+        
         self.products[product_id] = Product(product_id, name, price, quantity)
         self.save_inventory()
         return f"Product {name} added successfully."
 
     def update_quantity(self, product_id, amount):
+        product_id = int(product_id)
         if product_id in self.products:
             product = self.products[product_id]
             if amount < 0 and abs(amount) > product.quantity:
@@ -36,15 +38,15 @@ class Inventory:
         return "\n".join(stock_info)
 
     def save_inventory(self):
-        file_path = r"C:\Users\lenovo\Documents\python(for class)\Project(IMS)\Indixpert-FSD-April-Python-Pr01\Inventory_Management_System\inventory.json"
+        file_path = r"C:\Users\asus\Documents\Indixpert-FSD-April-Python-Pr01\src\inventory.json"
         with open(file_path, 'w') as file:
             json.dump({pid: vars(product) for pid, product in self.products.items()}, file, indent=4)
 
     def load_inventory(self):
-        file_path = r"C:\Users\lenovo\Documents\python(for class)\Project(IMS)\Indixpert-FSD-April-Python-Pr01\Inventory_Management_System\inventory.json"
+        file_path = r"C:\Users\asus\Documents\Indixpert-FSD-April-Python-Pr01\src\inventory.json"
         try:
             with open(file_path, 'r') as file:
                 data = json.load(file)
-                self.products = {pid: Product(**info) for pid, info in data.items()}
+                self.products = {int(pid): Product(**info) for pid, info in data.items()}
         except FileNotFoundError:
             self.products = {}

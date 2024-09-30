@@ -10,6 +10,3 @@ class Product:
 
     def display_info(self):
         return f"ID: {self.product_id}, Name: {self.name},Rs. {self.price}, Quantity: {self.quantity}"
-
-# product = Product(1, "laptop", 500000, 10)
-# print(product.display_info())
