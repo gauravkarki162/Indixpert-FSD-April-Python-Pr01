@@ -1,5 +1,5 @@
 from src.store import Store
-from src.user_reg.user_reg import UserManager
+from src.user_reg.user_manager import UserManager
 
 class UI:
     def __init__(self):
