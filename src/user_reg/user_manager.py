@@ -1,7 +1,7 @@
 import json
 import os
 import re
-from src.user_reg.user import User
+from src.user_reg.user import user
 
 class UserManager:
     def __init__(self):
@@ -26,7 +26,7 @@ class UserManager:
             return ("Password must be at least 7 characters long, "
                     "contain at least one uppercase letter and one special character. Please Sign Up again.")
         
-        self.users[username] = User(username, password, first_name, last_name)
+        self.users[username] = user(username, password, first_name, last_name)
         self.save_users()
         return "Signup successful!"
 
@@ -48,4 +48,4 @@ class UserManager:
         if os.path.exists(file_path):
             with open(file_path, 'r') as file:
                 data = json.load(file)
-                self.users = {username: User(**info) for username, info in data.items()}
+                self.users = {username: user(**info) for username, info in data.items()}
