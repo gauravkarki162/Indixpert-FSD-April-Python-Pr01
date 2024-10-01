@@ -1,5 +1,4 @@
 import json
-import os
 import re
 from src.user_reg.user import user
 
@@ -19,6 +18,9 @@ class UserManager:
         return True
 
     def signup(self, username, password, first_name, last_name):
+        if len(self.users) >= 3:
+            return "Maximum number of users is 3."
+
         if username in self.users:
             return "Username already exists. Please choose another."
         
@@ -45,7 +47,9 @@ class UserManager:
 
     def load_users(self):
         file_path = r"C:\Users\asus\Documents\Indixpert-FSD-April-Python-Pr01\src\user_reg\user_reg.json"
-        if os.path.exists(file_path):
+        try:
             with open(file_path, 'r') as file:
                 data = json.load(file)
                 self.users = {username: user(**info) for username, info in data.items()}
+        except FileNotFoundError:
+            self.users = {}

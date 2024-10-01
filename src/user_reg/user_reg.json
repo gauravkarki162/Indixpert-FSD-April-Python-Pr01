@@ -4,5 +4,17 @@
         "password": "123@456Ab",
         "first_name": "gaurav",
         "last_name": "karki"
+    },
+    "abcdef": {
+        "username": "abcdef",
+        "password": "123@456Ab",
+        "first_name": "ABC",
+        "last_name": "DEF"
+    },
+    "kumkum123": {
+        "username": "kumkum123",
+        "password": "123@456Ab",
+        "first_name": "kumkum",
+        "last_name": "kumkum"
     }
 }

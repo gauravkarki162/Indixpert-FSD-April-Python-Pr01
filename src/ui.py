@@ -130,6 +130,6 @@ class UI:
 
                 elif choice == '5':
                     self.is_authenticated = False
-                    print("Logged out successfully.")
+                    print("Log out successfull.")
                 else:
                     print("Invalid option. Please try again.")
