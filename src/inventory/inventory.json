@@ -16,5 +16,11 @@
         "name": "paper",
         "price": 3000,
         "quantity": 300
+    },
+    "4": {
+        "product_id": 4,
+        "name": "pencil",
+        "price": 300,
+        "quantity": 70
     }
 }

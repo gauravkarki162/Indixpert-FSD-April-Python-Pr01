@@ -38,12 +38,12 @@ class Inventory:
         return "\n".join(stock_info)
 
     def save_inventory(self):
-        file_path = r"C:\Users\asus\Documents\Indixpert-FSD-April-Python-Pr01\src\inventory.json"
+        file_path = r"C:\Users\asus\Documents\Indixpert-FSD-April-Python-Pr01\src\inventory\inventory.json"
         with open(file_path, 'w') as file:
             json.dump({pid: vars(product) for pid, product in self.products.items()}, file, indent=4)
 
     def load_inventory(self):
-        file_path = r"C:\Users\asus\Documents\Indixpert-FSD-April-Python-Pr01\src\inventory.json"
+        file_path = r"C:\Users\asus\Documents\Indixpert-FSD-April-Python-Pr01\src\inventory\inventory.json"
         try:
             with open(file_path, 'r') as file:
                 data = json.load(file)
