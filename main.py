@@ -1,3 +1,3 @@
-from Inventory_Management_System.ui import UI
+from src.ui import UI
 ui = UI()
 ui.run()
