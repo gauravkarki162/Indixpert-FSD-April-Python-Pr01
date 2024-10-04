@@ -1,3 +1,4 @@
 from src.ui import UI
-ui = UI()
-ui.run()
+
+dashboard = UI()
+dashboard.run()
