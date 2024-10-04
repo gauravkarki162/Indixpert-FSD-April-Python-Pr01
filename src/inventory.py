@@ -1,3 +1,4 @@
+from pathlib import Path
 import json
 from src.product import Product
 
@@ -15,6 +16,10 @@ class Inventory:
             new_id += 1
         self.user_last_product_id[added_by] = new_id
         return new_id
+    
+    def get_inventory_file_path(self):
+        base_path = Path(__file__).resolve().parent
+        return base_path / 'inventory' / 'inventory.json'
 
     def add_product(self, name, price, quantity, added_by):
         product_id = self.generate_product_id(added_by)
@@ -63,7 +68,8 @@ class Inventory:
             return f"Product ID {product_id} not found."
 
     def save_inventory(self):
-        file_path = "src/inventory/inventory.json"
+        file_path = self.get_inventory_file_path()
+        file_path.parent.mkdir(parents=True, exist_ok=True)
         with open(file_path, 'w') as file:
             json.dump({
                 'products': {pid: vars(product) for pid, product in self.products.items()},
@@ -71,7 +77,7 @@ class Inventory:
             }, file, indent=4)
 
     def load_inventory(self):
-        file_path = "src/inventory/inventory.json"
+        file_path = self.get_inventory_file_path()
         try:
             with open(file_path, 'r') as file:
                 data = json.load(file)

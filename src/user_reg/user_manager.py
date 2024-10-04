@@ -1,3 +1,4 @@
+from pathlib import Path
 import json
 import re
 from src.user_reg.user import User
@@ -6,6 +7,10 @@ class UserManager:
     def __init__(self):
         self.users = {}
         self.load_users()
+        
+    def get_user_file_path(self):
+        base_path = Path(__file__).parent.parent
+        return base_path / 'user_reg' / 'user_reg.json'
 
     def is_valid_password(self, password):
         stripped_password = password.replace(" ", "")
@@ -58,12 +63,12 @@ class UserManager:
         return "Incorrect password."
 
     def save_users(self):
-        file_path = "src/user_reg/user_reg.json"
+        file_path = self.get_user_file_path()
         with open(file_path, 'w') as file:
             json.dump({username: vars(user) for username, user in self.users.items()}, file, indent=4)
 
     def load_users(self):
-        file_path = "src/user_reg/user_reg.json"
+        file_path = self.get_user_file_path()
         try:
             with open(file_path, 'r') as file:
                 data = json.load(file)
