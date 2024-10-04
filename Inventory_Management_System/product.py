@@ -1,15 +1,13 @@
 class Product:
-    def __init__(self, product_id, name, price, quantity):
+    def __init__(self, product_id, name, price, quantity,added_by):
         self.product_id = product_id
         self.name = name
         self.price = price
         self.quantity = quantity
+        self.added_by = added_by
 
     def update_quantity(self, amount):
         self.quantity += amount
 
     def display_info(self):
-        return f"ID: {self.product_id}, Name: {self.name},Rs. {self.price}, Quantity: {self.quantity}"
-
-# product = Product(1, "laptop", 500000, 10)
-# print(product.display_info())
+        return (f"ID: {self.product_id}, Name: {self.name},Rs. {self.price}, Quantity: {self.quantity},added by:{self.added_by}")
