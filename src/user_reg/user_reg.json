@@ -1,20 +1,23 @@
 {
-    "gauravk12": {
-        "username": "gauravk12",
-        "password": "123@456Ab",
-        "first_name": "gaurav",
-        "last_name": "karki"
+    "admin": {
+        "username": "admin",
+        "password": "admin123@",
+        "first_name": "admin",
+        "last_name": "admin",
+        "role": "admin"
     },
-    "abcdef": {
-        "username": "abcdef",
-        "password": "123@456Ab",
-        "first_name": "ABC",
-        "last_name": "DEF"
+    "abcd": {
+        "username": "abcd",
+        "password": "123@456Abcd",
+        "first_name": "abc",
+        "last_name": "def",
+        "role": "user"
     },
-    "kumkum123": {
-        "username": "kumkum123",
-        "password": "123@456Ab",
-        "first_name": "kumkum",
-        "last_name": "kumkum"
+    "qwerty": {
+        "username": "qwerty",
+        "password": "123@456Abcd",
+        "first_name": "qwer",
+        "last_name": "ty",
+        "role": "user"
     }
 }
