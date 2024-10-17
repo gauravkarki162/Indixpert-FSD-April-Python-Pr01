@@ -1,4 +1,4 @@
-from src.ui import UI
+from src.ui.ui import UI
 
 dashboard = UI()
 dashboard.run()

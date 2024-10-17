@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "user_id": 1,
+            "username": "admin",
+            "password": "123@456Abcd",
+            "first_name": "admin",
+            "last_name": "admin",
+            "role": "admin"
+        },
+        {
+            "user_id": 2,
+            "username": "abcd",
+            "password": "123@456Abcd",
+            "first_name": "abc",
+            "last_name": "def",
+            "role": "user"
+        },
+        {
+            "user_id": 3,
+            "username": "ghk12",
+            "password": "123@456Abcd",
+            "first_name": "ghk",
+            "last_name": "ghk",
+            "role": "user"
+        }
+    ]
+}

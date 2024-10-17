@@ -4,55 +4,19 @@
             "product_id": 1,
             "name": "milk",
             "price": 5000,
-            "quantity": 600,
+            "quantity": 500,
             "added_by": "abcd"
         },
         "2": {
             "product_id": 2,
-            "name": "pencil",
+            "name": "cheese",
             "price": 4000,
             "quantity": 400,
-            "added_by": "gauravk23"
-        },
-        "3": {
-            "product_id": 3,
-            "name": "mouse",
-            "price": 4000,
-            "quantity": 200,
-            "added_by": "gauravk23"
-        },
-        "5": {
-            "product_id": 5,
-            "name": "cardboard",
-            "price": 2000,
-            "quantity": 10,
-            "added_by": "gauravk23"
-        },
-        "4": {
-            "product_id": 4,
-            "name": "headphones",
-            "price": 5000,
-            "quantity": 10,
-            "added_by": "abcd"
-        },
-        "6": {
-            "product_id": 6,
-            "name": "mobilephone",
-            "price": 30000,
-            "quantity": 6,
-            "added_by": "qwerty"
-        },
-        "7": {
-            "product_id": 7,
-            "name": "battery",
-            "price": 10000,
-            "quantity": 10,
-            "added_by": "qwerty"
+            "added_by": "ghk12"
         }
     },
     "user_last_product_id": {
-        "abcd": 4,
-        "gauravk23": 8,
-        "qwerty": 7
+        "abcd": 1,
+        "ghk12": 2
     }
 }

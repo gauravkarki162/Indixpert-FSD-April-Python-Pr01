@@ -1,4 +1,4 @@
-from src.inventory import Inventory
+from src.inventory.inventory import Inventory
 
 class Store:
     def __init__(self):
@@ -13,13 +13,13 @@ class Store:
             product = self.inventory.products.get(product_id)
         except ValueError:
             product = next((p for p in self.inventory.products.values() if p.name.lower() == product_identifier.lower()), None)
-        
+
         if not product:
             return f"Product '{product_identifier}' not found."
 
         if role == "user" and product.added_by != username:
             return "You are not allowed to update this product."
-        
+
         return self.inventory.update_quantity(product.product_id, amount)
 
     def check_stock(self, username, role):
@@ -33,7 +33,7 @@ class Store:
             product = self.inventory.products.get(product_id)
         except ValueError:
             product = next((p for p in self.inventory.products.values() if p.name.lower() == product_identifier.lower()), None)
-        
+
         if not product:
             return f"Product '{product_identifier}' not found."
 

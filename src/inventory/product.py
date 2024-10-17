@@ -10,4 +10,4 @@ class Product:
         self.quantity += amount
 
     def display_info(self):
-        return (f"ID: {self.product_id}, Name: {self.name}, Rs. {self.price}, Quantity: {self.quantity}, Added by: {self.added_by}")
+        return f"ID: {self.product_id}, Name: {self.name}, Rs. {self.price}, Quantity: {self.quantity}, Added by: {self.added_by}"
